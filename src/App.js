@@ -9,7 +9,6 @@ const App = () => {
     <div>
       <VehicleDistance/>
       <Speedselect/>
-      <Datadisplay/>
     </div>
   );
 }
