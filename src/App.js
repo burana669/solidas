@@ -3,7 +3,7 @@ import {Speedselect} from "./components/Speedselect"
 import {Datadisplay} from "./components/Datadisplay"
 import {CarContextProvider, DistanceContextProvider} from "./context/context"
 import React from "react"
-import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 const App = () => {
   return (
