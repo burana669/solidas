@@ -2,8 +2,7 @@ import React, {useState, useContext} from "react"
 import {CarContext, DistanceContext} from "../context/context"
 import {Datadisplay} from "./Datadisplay"
 import {Comparison} from "./Comparison"
-import "./Speedselect.css"
-import {Button} from "semantic-ui-react"
+import {Button, Slider, SpeedselectStyle, Flex2, Speed2Style} from "../styled/styled"
 
 export const Speedselect = () => {
 
@@ -22,7 +21,7 @@ export const Speedselect = () => {
         const num = (value/300) * 100
         const percentage = num.toFixed()
         if(!speedlocked){
-        setBackground(`linear-gradient(90deg, red ${percentage}%, white ${percentage}%)`)
+        setBackground(`linear-gradient(90deg, darkgrey ${percentage}%, white ${percentage}%)`)
         setSpeed2(value)
         setSpeedLocked(true)
         }
@@ -36,19 +35,27 @@ export const Speedselect = () => {
     const Speed2handler = () => {
         if(speed2 !== 0){
         return  (
-        <Datadisplay className = "speed2" speed={speed2} id = "speed2" consumption ={consumption} distance = {distance}/>)
-        }else return <div></div>
+        <Speed2Style>    
+        <Datadisplay className = "speed2" speed={speed2} id = "speed2" consumption ={consumption} distance = {distance}/>
+        <Button onClick={() => handleClick()}>Vapauta vertailu</Button>
+        </Speed2Style>)
+        }else return <Speed2Style></Speed2Style>
         
         }  
 
-    return (<div>
+    return (
+    <Flex2>
+        <SpeedselectStyle>
        <div>{speedlocked ? "Vertaa":"Anna vertailunopeus"}</div> 
-       <input className="slider" type="range" min="1" max="300" onChange ={(e) => handleinput1(e.target.value)} onMouseUp = {(e) => handleBlur(e.target.value)} style={{ backgroundImage: background1 }}></input>
+       <Slider type="range" min="1" max="300" onChange ={(e) => handleinput1(e.target.value)} onMouseUp = {(e) => handleBlur(e.target.value)} style={{ backgroundImage: background1 }}></Slider>
        <Datadisplay speed={speed1} speed2={speed2} id = "speed1" consumption ={consumption} distance = {distance}/>
-       <Button onClick={() => handleClick()}>Vapauta vertailu</Button>
-       <Speed2handler/>
-       <Comparison speed1={speed1} speed2={speed2} consumption={consumption} distance={distance} comparing = {speedlocked}/>
        
        
-    </div>)
+       
+       
+       
+        </SpeedselectStyle>
+        <Speed2handler/>    
+    <Comparison speed1={speed1} speed2={speed2} consumption={consumption} distance={distance} comparing = {speedlocked}/>
+    </Flex2>)
 }

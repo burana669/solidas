@@ -1,5 +1,6 @@
 import React from "react"
-import "./Comparison"
+import {} from "../styled/styled"
+
 
 export const Datadisplay = (props) => {
 
@@ -7,7 +8,7 @@ export const Datadisplay = (props) => {
     const hours = Math.floor(((props.distance/props.speed)* 60) / 60)
 
     if (!props.comparing || props.id === "speed2"){ 
-    return (<div className ="Comparison">
+    return (<div>
     <div>kulutus/100km {(props.consumption * Math.pow(1.009, props.speed-1)).toFixed(2)}</div>
     <div>kulutus(l) {((props.distance/100) *(props.consumption * Math.pow(1.009, props.speed-1))).toFixed(2)} </div>
     <div>nopeus(km/h) {props.speed}</div>

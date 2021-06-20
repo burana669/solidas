@@ -1,20 +1,21 @@
 import {VehicleDistance} from "./components/VehicleDistance"
 import {Speedselect} from "./components/Speedselect"
-import {Datadisplay} from "./components/Datadisplay"
+
 import {CarContextProvider, DistanceContextProvider} from "./context/context"
 import React from "react"
-import 'semantic-ui-css/semantic.min.css';
+import {MainContainer} from "./styled/styled"
 
 const App = () => {
   return (
-    <div>
+    <MainContainer>
       <DistanceContextProvider>
       <CarContextProvider>
         <VehicleDistance/>
+        
         <Speedselect/>
       </CarContextProvider>
       </DistanceContextProvider>
-    </div>
+    </MainContainer>
   );
 }
 

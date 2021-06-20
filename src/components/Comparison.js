@@ -1,5 +1,5 @@
 import React from "react"
-import "./Comparison.css"
+import {ComparisonStyle} from "../styled/styled"
 
 export const Comparison = (props) => {
     
@@ -12,12 +12,12 @@ export const Comparison = (props) => {
     const fuelDifference = ((consumption1*(props.distance/100)) - (consumption2*(props.distance/100))).toFixed(2)
 
 
-    console.log(props.comparing)
+    
     if(props.comparing){
-    return (<div className = "Comparison">
+    return (<ComparisonStyle>
         <div>{timeDifference <=0 ? "säästät aikaa" : "menetät aikaa"} {hours} tuntia {Math.abs(minutes)} minuuttia</div>
         <div>Polttoaineenkulutus: {Math.abs(fuelDifference)} {fuelDifference <=0 ? "vähemmän" : "enemmän"}</div>
 
-    </div>)
+    </ComparisonStyle>)
     } else return <div></div>
 }
