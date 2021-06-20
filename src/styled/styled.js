@@ -2,41 +2,45 @@ import styled, {createGlobalStyle} from "styled-components"
 
 export const VehicleDistanceStyle = styled.div`
 order: 0;
-width: 20%;
+width: 50%;
 height: 20%;
+margin: 1rem;
 
+`
+export const DistanceInputStyle = styled.div`
+margin-left: 2rem;
 `
 
 export const SpeedselectStyle = styled.div`
 order: 1;
 width: 40%;
 min-width: 40%;
-margin: 10px;
+margin: 2rem;
 
 `
 export const Speed2Style = styled.div`
 width: 40%;
 order: 2;
-margin: 20px;
+margin: 3rem;
 `
 
 export const ComparisonStyle = styled.div`
 order:3;
 width: 50%;
 height: 20%;
-margin: 10px;
+margin: 2rem;
 
 `
 
 export const Flex1 = styled.div`
 display: flex;
-margin: 20px;
+margin: 3rem;
 `
 export const Flex2 = styled.div`
 width: 100%;
 display: flex;
 flex-flow: row wrap;
-margin: 20px;
+margin: 3rem;
 
 `
 
@@ -50,30 +54,30 @@ export const MainContainer = styled.div`
 
 export const Button = styled.button`
 background: grey;
-border-radius: 5px;
-border: 0px;
+border-radius: 1rem;
+border: 1rem;
 border-color: black;
 color: whitesmoke;
-padding: 10px;
-margin: 4px;
+padding: 1rem;
+margin: 1rem;
 `
 export const Slider = styled.input`
 -webkit-appearance: none;
     width: 100%;
     height: 15px;
-    outline-width: 2px;
+    outline-width: 1rem;
     outline: black;
     outline-style: double;
     opacity: 0.7;
-    margin: 10px;
+    margin: 2rem;
     
     
 
 ::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 7px;
-  height: 25px;
+  width: 1rem;
+  height: 3rem;
   border-radius: 10%; 
   background: #111111;
   cursor: pointer;

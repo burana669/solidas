@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react"
 import {CarContext, DistanceContext} from "../context/context"
-import {Button, VehicleDistanceStyle, Flex1, DistanceInput} from "../styled/styled"
+import {Button, VehicleDistanceStyle, Flex1, DistanceInput, DistanceInputStyle} from "../styled/styled"
 
 
 export const VehicleDistance = () => {
@@ -25,7 +25,7 @@ const HandleClick = (props) => {
             <Button onClick={() => HandleClick(3)}>Auto 1</Button>
             <Button onClick={() => HandleClick(4)} >Auto 2</Button>
             <Button onClick={() => HandleClick(5)}>Auto 3</Button>
-            <div> Matka: </div> <DistanceInput placeholder = "100" onChange= {(e)=> setDistance(e.target.value)}></DistanceInput>
+           <DistanceInputStyle><div> Matka: </div> <DistanceInput placeholder = "100" onChange= {(e)=> setDistance(e.target.value)}></DistanceInput></DistanceInputStyle>
         </VehicleDistanceStyle> 
         </Flex1>    
     
